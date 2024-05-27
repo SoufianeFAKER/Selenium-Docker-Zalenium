@@ -4,13 +4,16 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
 public class ExecuteTestZaleniumFirefox1 {
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test1() throws MalformedURLException, InterruptedException {
 
@@ -18,10 +21,10 @@ public class ExecuteTestZaleniumFirefox1 {
 
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName(BrowserType.FIREFOX);
-		// cap.setPlatform(Platform.WIN10);
+		//cap.setPlatform(Platform.WIN10);
 
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
-		driver.get("https://www.sephora.fr/");
+		driver.get("https://automationexercise.com/");
 		driver.manage().window().maximize();
 
 		Thread.sleep(3000);
